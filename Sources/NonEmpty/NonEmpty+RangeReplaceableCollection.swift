@@ -27,6 +27,11 @@ extension NonEmpty where Collection: RangeReplaceableCollection {
   ) where S: Swift.Collection, Element == S.Element {
     self.rawValue.insert(contentsOf: newElements, at: i)
   }
+  
+  @discardableResult
+  public mutating func remove(at i: Index) -> Element {
+    returun self.rawValue.remove(at: i)  
+  }
 
   public static func += <S: Sequence>(lhs: inout Self, rhs: S) where Element == S.Element {
     lhs.append(contentsOf: rhs)
