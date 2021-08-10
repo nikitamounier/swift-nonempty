@@ -30,7 +30,7 @@ extension NonEmpty where Collection: RangeReplaceableCollection {
   
   @discardableResult
   public mutating func remove(at i: Index) -> Element {
-    returun self.rawValue.remove(at: i)  
+    return self.rawValue.remove(at: i)  
   }
 
   public static func += <S: Sequence>(lhs: inout Self, rhs: S) where Element == S.Element {
